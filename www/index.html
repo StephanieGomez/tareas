@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Operaciones Basicas</title>
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+	<link rel="stylesheet" type="text/css" href="css/materialize.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="js/jquery-1.12.1.min.js"></script>
+    
+</head>
+<body>
+	  <nav>
+	  	<div class="nav-wrapper">
+	  		<a href="#!" class="brand-logo"></a>
+	  		<a href="#" data-activates="mobile-demo" class="button-collapse">
+	  			<i class="material-icons">CREA CUENTA</i>
+	  		</a>
+	  		<ul class="right hide-on-med-and-down">
+
+	  			<li><a href="singup.html">Sign Up</a></li>
+	  			
+	  			<li><a href=""></a></li>
+	  			<li><a href=""></a></li>
+	  		</ul>
+
+	  		  <ul class="side-nav lime accent-3" id="mobile-demo">
+	  		  	 <li><a href="singup.html">Signup</a></li>
+	  		  	
+	  		  </ul>
+
+	  	</div>
+	  </nav>
+	  
+<script>
+	  $(document).ready(function(){
+  $(".button-collapse").sideNav();
+   });
+</script>
+
+<center><h5>Login</h5></center>
+
+<form class="col s12" action="singup.html">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="account" type="text" class="validate">
+          <label for="icon_prefix">User</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">lock_outline</i>
+          <input id="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <label>Crea una cuenta</label>
+        <br>
+        <button class="btn waves-effect waves-light" type="submit" name="action">
+          crear
+        </button> 
+
+      </div>
+   </form>  
+    
+    <button class="btn waves-effect waves-light" onclick="logueo()">iniciar sesion</button>    
+
+<script>
+	function logueo() {
+
+ inUser = document.getElementById('account').value;
+ inPass = document.getElementById('password').value;
+ lsUser = localStorage.getItem("user");
+ lsPass = localStorage.getItem("pass");
+
+  if(inUser == lsUser && inPass==lsPass){
+    window.location.href='operaciones.html';
+     }else{
+      alert("usuario o contraseña incorrectos")
+      }  
+   }
+</script>
+	<script src="js/materialize.js"></script>
+</body>
+</html>
